@@ -23,9 +23,9 @@ on:
         description: 'out dir '
         type: enviroment
         required: True      
-#   push:  
-#   schedule:
-#   - cron: '0 0 * * *' # @daily
+  push:  
+  schedule:
+  - cron: '0 0 * * *' # @daily
 
 jobs:
   scheduled:
