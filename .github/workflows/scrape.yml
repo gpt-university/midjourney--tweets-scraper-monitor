@@ -30,6 +30,12 @@ on:
 jobs:
   scheduled:
     runs-on: ubuntu-latest
+    permissions:
+      deployments: write
+      contents: write
+      statuses: write
+      actions: write
+      checks: read    
     steps:
     - name: Check out this repo
       uses: actions/checkout@v3
