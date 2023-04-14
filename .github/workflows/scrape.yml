@@ -16,7 +16,7 @@ on:
 
     inputs:
       hashtags:
-        description: 'chatgpt'
+        description: 'hashtags，you can type like this:aaa or  aaa,bbb,ccc'
         type: enviroment
         required: True
       outdir:
