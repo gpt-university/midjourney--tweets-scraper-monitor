@@ -16,6 +16,10 @@ DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
 
 DATA_PATH = pathlib.Path(outdir.replace('/','')+"/")
 DATA_PATH.mkdir(parents=True, exist_ok=True)
+
+if not DATA_PATH.exists():
+    os.mkdir(DATA_PATH)
+    
 # MAX_RESULT = 100
 # DATE_END = '2020-05-08'
 JSON_FILENAME = DATA_PATH / str(datetime.datetime.today().date())
