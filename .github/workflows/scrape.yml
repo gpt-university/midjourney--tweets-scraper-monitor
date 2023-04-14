@@ -1,4 +1,4 @@
-name: Scrape depression tweets
+name: Scrape chatgpt tweets
 
 # FYI cron
 # ┌────────── minute (0 - 59)
