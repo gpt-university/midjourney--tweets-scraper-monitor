@@ -19,13 +19,13 @@ on:
         description: 'hashtags，you can type like this:aaa or  aaa,bbb,ccc'
         type: enviroment
         required: True
-        default: ${{ secrets.keywords }}
+        default: ${{ secrets.KEYWORDS }}
         
       outdir:
         description: 'out dir '
         type: enviroment
         required: True      
-        default: ${{ secrets.out }}
+        default: ${{ secrets.OUT }}
         
   push:  
   schedule:
