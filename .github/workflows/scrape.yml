@@ -20,7 +20,7 @@ on:
         type: enviroment
         required: True
         default: ${{ vars.KEYWORDS }}
-                
+
       outdir:
         description: 'out dir '
         type: enviroment
