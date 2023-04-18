@@ -18,14 +18,12 @@ on:
       hashtags:
         description: 'hashtags，you can type like this:aaa or  aaa,bbb,ccc'
         type: enviroment
-        required: True
-        default: ${{ vars.KEYWORDS }}
+        required: False
 
       outdir:
         description: 'out dir '
         type: enviroment
-        required: True      
-        default: ${{ vars.OUT }}
+        required: False      
         
   push:  
   schedule:
