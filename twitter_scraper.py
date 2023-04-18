@@ -4,7 +4,10 @@ import os
 import pathlib
 hashtags = os.getenv('hashtags').strip()
 outdir = os.getenv('outdir').strip()
-
+if len(hashtags)==0:
+    hashtags='chatgpt,chatGPT'
+if len(outdir)==0:
+    outdir='data'
 keywords=[]
 if ',' in hashtags:
     keywords = hashtags.split(',')
