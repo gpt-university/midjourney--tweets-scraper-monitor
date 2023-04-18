@@ -5,7 +5,7 @@ import pathlib
 hashtags = os.getenv('hashtags').strip()
 outdir = os.getenv('outdir').strip()
 if len(hashtags)==0:
-    hashtags='niijourney,midjourney'
+    hashtags='midjourney'
 if len(outdir)==0:
     outdir='data'
 keywords=[]
