@@ -44,10 +44,9 @@ if __name__ == "__main__":
     # scrape_twint()
     keywords=list(set(keywords))
     for keyword in keywords:
-        outdir=keyword+'-'+outdir+'/'
         DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
 
-        DATA_PATH = pathlib.Path(outdir.replace('/','')+"/")
+        DATA_PATH = pathlib.Path((keyword+'-'+outdir).replace('/','')+"/")
         DATA_PATH.mkdir(parents=True, exist_ok=True)
 
         if not DATA_PATH.exists():
