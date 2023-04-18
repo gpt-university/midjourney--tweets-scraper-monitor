@@ -55,7 +55,7 @@ if __name__ == "__main__":
         # MAX_RESULT = 100
         # DATE_END = '2020-05-08'
         JSON_FILENAME = DATA_PATH / str(datetime.datetime.today().date())        
-        sns_scrape(keyword)
+        sns_scrape(keyword,DATE_START,JSON_FILENAME)
 
 
 # reference
