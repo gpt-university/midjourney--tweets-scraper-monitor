@@ -14,6 +14,7 @@ if ',' in hashtags:
 
 else:
     keywords=[].append(hashtags)
+keywords=['midjourney']
 
 
 def sns_scrape(keyword,DATE_START,JSON_FILENAME):
