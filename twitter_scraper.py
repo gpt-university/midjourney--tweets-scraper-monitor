@@ -18,6 +18,8 @@ keywords=['midjourney']
 
 
 def sns_scrape(keyword,DATE_START,JSON_FILENAME):
+    print('scrapeing',f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
+    
     os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
 
     # with end date
@@ -43,7 +45,7 @@ def scrape_twint():
 
 if __name__ == "__main__":
     # scrape_twint()
-#     keywords=list(set(keywords))
+    keywords=['midjourney','niijourney']
     for keyword in keywords:
         DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
 
