@@ -15,17 +15,6 @@ if ',' in hashtags:
 else:
     keywords=[].append(hashtags)
 
-DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
-
-DATA_PATH = pathlib.Path(outdir.replace('/','')+"/")
-DATA_PATH.mkdir(parents=True, exist_ok=True)
-
-if not DATA_PATH.exists():
-    os.mkdir(DATA_PATH)
-    
-# MAX_RESULT = 100
-# DATE_END = '2020-05-08'
-JSON_FILENAME = DATA_PATH / str(datetime.datetime.today().date())
 
 def sns_scrape(keyword):
     os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
@@ -54,6 +43,18 @@ def scrape_twint():
 if __name__ == "__main__":
     # scrape_twint()
     for keyword in keywords:
+        outdir=keyword+'-'+outdir
+        DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
+
+        DATA_PATH = pathlib.Path(outdir.replace('/','')+"/")
+        DATA_PATH.mkdir(parents=True, exist_ok=True)
+
+        if not DATA_PATH.exists():
+            os.mkdir(DATA_PATH)
+
+        # MAX_RESULT = 100
+        # DATE_END = '2020-05-08'
+        JSON_FILENAME = DATA_PATH / str(datetime.datetime.today().date())        
         sns_scrape(keyword)
 
 
