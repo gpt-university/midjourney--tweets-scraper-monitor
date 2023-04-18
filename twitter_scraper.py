@@ -42,7 +42,7 @@ def scrape_twint():
 
 if __name__ == "__main__":
     # scrape_twint()
-    keywords=list(set(keywords))
+#     keywords=list(set(keywords))
     for keyword in keywords:
         DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
 
