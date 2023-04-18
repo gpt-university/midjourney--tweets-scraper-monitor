@@ -16,7 +16,7 @@ else:
     keywords=[].append(hashtags)
 
 
-def sns_scrape(keyword):
+def sns_scrape(keyword,DATE_START,JSON_FILENAME):
     os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
 
     # with end date
@@ -43,7 +43,7 @@ def scrape_twint():
 if __name__ == "__main__":
     # scrape_twint()
     for keyword in keywords:
-        outdir=keyword+'-'+outdir
+        outdir=keyword+'-'+outdir+'/'
         DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
 
         DATA_PATH = pathlib.Path(outdir.replace('/','')+"/")
