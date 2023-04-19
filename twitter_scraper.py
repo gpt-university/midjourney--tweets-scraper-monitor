@@ -4,23 +4,23 @@ import os
 import pathlib
 hashtags = os.getenv('hashtags').strip()
 outdir = os.getenv('outdir').strip()
-if len(hashtags)==0:
-    hashtags='midjourney'
+keywords=[]
+
+
 if len(outdir)==0:
     outdir='data'
-keywords=[]
 if ',' in hashtags:
     keywords = hashtags.split(',')
 
 else:
     keywords=[].append(hashtags)
-keywords=['midjourney']
 
+# keywords=['midjourney,niijourney']
 
 def sns_scrape(keyword,DATE_START,JSON_FILENAME):
-    print('scrapeing',f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
-    
+    print('scrapeing job:',f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
     os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
+    print('done',keyword)
 
     # with end date
     # os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{HASHTAG} until:{DATE_END}" > {JSON_FILENAME}.json')
@@ -45,7 +45,11 @@ def scrape_twint():
 
 if __name__ == "__main__":
     # scrape_twint()
-    keywords=['midjourney','niijourney']
+#     keywords=list(set(keywords))
+    if len(list(set(keywords)))==0:
+#         keywords=['niijourney']
+        keywords=['HuggingGPT','niijourney','midjourney']
+
     for keyword in keywords:
         DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
 
