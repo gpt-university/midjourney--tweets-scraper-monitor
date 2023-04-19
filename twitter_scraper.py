@@ -46,6 +46,8 @@ def scrape_twint():
 if __name__ == "__main__":
     # scrape_twint()
 #     keywords=list(set(keywords))
+    if keywords is None:
+        keywords=[]
     if len(keywords) | len(list(set(keywords)))==0:
 #         keywords=['niijourney']
         keywords=['HuggingGPT','niijourney','midjourney']
