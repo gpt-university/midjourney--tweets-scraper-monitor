@@ -50,7 +50,7 @@ if __name__ == "__main__":
         keywords=[]
     if len(keywords) | len(list(set(keywords)))==0:
 #         keywords=['niijourney']
-        keywords=['HuggingGPT','niijourney','midjourney']
+        keywords=['HuggingGPT','niijourney','midjourney','chatgpt']
 
     for keyword in keywords:
         DATE_START = str(datetime.datetime.today().date() - datetime.timedelta(days=1))
