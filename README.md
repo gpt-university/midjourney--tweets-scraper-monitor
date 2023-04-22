@@ -19,3 +19,8 @@ by default it scrape #midjourney,#niijourney,#hugginggpt
 ## manually task
 you can select the action and run,
 in the gui,you can input any other more keywords and output saving directory
+
+
+## filter twitters
+
+https://github.com/JustAnotherArchivist/snscrape/issues/201
