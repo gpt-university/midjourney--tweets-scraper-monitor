@@ -17,9 +17,16 @@ else:
 
 # keywords=['midjourney,niijourney']
 
-def sns_scrape(keyword,DATE_START,JSON_FILENAME):
+def sns_scrape(keyword,DATE_START,JSON_FILENAME,min_faves):
+    min_retweets=0
+    if min_faves =='':
+        min_faves=50
+    min_replies=10
+    
     print('scrapeing job:',f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
-    os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
+#     os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
+    os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" -filter:links min_faves:{min_faves}  > {JSON_FILENAME}.json')
+
     print('done',keyword)
 
     # with end date
