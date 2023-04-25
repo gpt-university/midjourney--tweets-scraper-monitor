@@ -36,3 +36,10 @@ scraper = snscrape.modules.twitter.TwitterSearchScraper('test')
 for tweet in scraper.get_items():
 	if tweet.likeCount >= 500 or tweet.retweetCount >= 500 or tweet.user.followersCount >= 500:
 		print(tweet.json())
+		
+
+
+## Pdf 邮件推送
+
+https://github.com/wanghaisheng/garss
+
