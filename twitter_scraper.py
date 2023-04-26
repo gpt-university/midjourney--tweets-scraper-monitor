@@ -73,8 +73,9 @@ if __name__ == "__main__":
         JSON_FILENAME = DATA_PATH / str(datetime.datetime.today().date())   
         print('============\nkeyword start:',keyword)
         print('===========\n',JSON_FILENAME)
-        sns_scrape(keyword,DATE_START,JSON_FILENAME)
+        sns_scrape(keyword,DATE_START,JSON_FILENAME,50)
         print('============\nkeyword end:',keyword)
+        sns_scrape(keyword,DATE_START,JSON_FILENAME,100)
 
 
 # reference
