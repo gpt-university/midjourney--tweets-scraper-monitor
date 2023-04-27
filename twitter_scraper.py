@@ -25,7 +25,7 @@ def sns_scrape(keyword,DATE_START,JSON_FILENAME,min_faves):
     
     print('scrapeing job:',f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
 #     os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" > {JSON_FILENAME}.json')
-    os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}" -filter:links min_faves:{min_faves}  > {JSON_FILENAME}+"-"+{min_faves}.json')
+    os.system(f'snscrape --jsonl --progress --since {DATE_START} twitter-hashtag "{keyword}"  min_faves:{min_faves}  > {JSON_FILENAME}+"-"+{min_faves}.json')
 
     print('done',keyword)
 
