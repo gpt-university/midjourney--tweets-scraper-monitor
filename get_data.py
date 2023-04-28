@@ -1,5 +1,5 @@
 from get_tweets import get_data_for_lang
-from Pre_Process_Tweets import pre_process_tweet
+from pre_process_tweet import pre_process_tweet
 import os
 import pandas as pd
 import argparse
