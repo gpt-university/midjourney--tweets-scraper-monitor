@@ -7,8 +7,8 @@ from distutils.sysconfig import get_python_lib
 
 
 def store_data(language, process = False,keyword='',min_faves=50):
-    directory = "datasets"
-    parent_dir = get_python_lib() + "/TLA/Data"
+    directory = keyword+"-data"
+    parent_dir = get_python_lib() 
     path = os.path.join(parent_dir, directory)
     if os.path.isdir(path) == False:
         os.mkdir(path)
