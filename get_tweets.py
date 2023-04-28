@@ -12,7 +12,7 @@ import snscrape.modules.twitter as sntwitter
 import itertools
 from distutils.sysconfig import get_python_lib
 
-def get_data_for_lang(language):
+def get_data_for_lang(language,min_faves=50,keyword=''):
     if language == None:
         lang_list = ['sv', 'th', 'nl', 'ja', 'tr', 'ur', 'id', 'pt', 'fr', 'zh-cn', 'ko', 'hi', 'es', 'fa', 'ro', 'ru',
                      'en']
@@ -38,7 +38,7 @@ def get_data_for_lang(language):
     # en-English
     for i in range(len(lang_list)):
         lang=lang_list[i]
-        scraped_tweets = sntwitter.TwitterSearchScraper('filter:has_engagement min_faves:10000 lang:{}'.format(lang)).get_items()
+        scraped_tweets = sntwitter.TwitterSearchScraper('filter:has_engagement min_faves:{} lang:{} #{}'.format(min_faves,lang,keyword)).get_items()
 
         # slicing the generator to keep only the first 100 tweets
         sliced_scraped_tweets = itertools.islice(scraped_tweets, 500)
