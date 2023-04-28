@@ -12,7 +12,7 @@ def store_data(language, process = False,keyword='',min_faves=50):
     path = os.path.join(parent_dir, directory)
     if os.path.isdir(path) == False:
         os.mkdir(path)
-    df_dict = get_data_for_lang(language,500,keyword=keyword):
+    df_dict = get_data_for_lang(language,500,keyword=keyword)
 
     if process == True:
         for file in os.listdir(path):
